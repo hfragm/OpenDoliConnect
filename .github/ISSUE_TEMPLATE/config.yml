@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation (Cahier des charges)
+    url: https://github.com/OWNER/REPO/wiki
+    about: Lisez le périmètre et les décisions de conception.

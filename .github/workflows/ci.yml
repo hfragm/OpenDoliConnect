@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  php-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [ '8.1', '8.2', '8.3' ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: composer, phpcs, php-cs-fixer
+
+      - name: Validate composer.json
+        run: composer validate --no-check-lock
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: PHPCS (WordPress standards)
+        run: |
+          vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+          vendor/bin/phpcs -q --standard=WordPress --ignore=vendor . || true
+
+      - name: PHPUnit (if tests exist)
+        run: |
+          if [ -f "phpunit.xml" ] || [ -f "tests/phpunit.xml" ]; then             vendor/bin/phpunit --colors=always ;           else             echo "No phpunit.xml found, skipping tests.";           fi
+
+      - name: Build plugin zip artifact
+        run: |
+          PLUGIN_SLUG="opendoliconnect"
+          VERSION=$(php -r "echo preg_match('/Version:\s*([0-9\.]+)/', file_get_contents('${PLUGIN_SLUG}/${PLUGIN_SLUG}.php'), $m) ? $m[1] : '0.0.0';")
+          ZIPNAME="${PLUGIN_SLUG}-${VERSION}.zip"
+          zip -r "$ZIPNAME" "${PLUGIN_SLUG}" -x "**/vendor/**" "**/.git/**" "**/.github/**"
+          echo "ZIP built: $ZIPNAME"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: opendoliconnect-build
+          path: "*.zip"

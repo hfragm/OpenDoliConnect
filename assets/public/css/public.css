@@ -1,0 +1,9 @@
+/* OpenDoliConnect - Public styles */
+.odc-schedules {
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin: 1em 0;
+}
+.odc-schedules h2 {
+    color: #0073aa;
+}

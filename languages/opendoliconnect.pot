@@ -1,0 +1,47 @@
+#
+# OpenDoliConnect - Template de traduction
+# Copyright (C) 2025 Asgard Hosting & Helptech Informatique
+# This file is distributed under the GPL v3.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenDoliConnect 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/asgard-hosting/opendoliconnect/issues\n"
+"POT-Creation-Date: 2025-08-26 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/Infrastructure/WP/AdminMenu.php:8
+msgid "OpenDoliConnect"
+msgstr ""
+
+#: src/Infrastructure/WP/AdminMenu.php:18
+msgid "Bienvenue dans le connecteur WooCommerce ↔ Dolibarr."
+msgstr ""
+
+#: src/Infrastructure/WP/Settings.php:14
+msgid "Connexion Dolibarr"
+msgstr ""
+
+#: src/Infrastructure/WP/Settings.php:20
+msgid "URL API Dolibarr"
+msgstr ""
+
+#: src/Infrastructure/WP/Settings.php:27
+msgid "Token API Dolibarr"
+msgstr ""
+
+#: templates/admin/dashboard.php:2
+msgid "OpenDoliConnect Dashboard"
+msgstr ""
+
+#: templates/admin/dashboard.php:3
+msgid "Statut de la connexion avec Dolibarr et WooCommerce."
+msgstr ""

@@ -1,9 +1,46 @@
 /* OpenDoliConnect - Public styles */
+
 .odc-schedules {
     border: 1px solid #ddd;
     padding: 1em;
     margin: 1em 0;
+    background: #fafafa;
+    border-radius: 6px;
 }
+
 .odc-schedules h2 {
     color: #0073aa;
+    margin-top: 0;
+}
+
+.odc-schedules table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5em;
+}
+
+.odc-schedules th,
+.odc-schedules td {
+    padding: 0.5em;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.odc-schedules tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.odc-schedules .status-paid {
+    color: green;
+    font-weight: bold;
+}
+
+.odc-schedules .status-due {
+    color: orange;
+    font-weight: bold;
+}
+
+.odc-schedules .status-late {
+    color: red;
+    font-weight: bold;
 }

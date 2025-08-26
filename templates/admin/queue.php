@@ -1,5 +1,5 @@
 <div class="wrap">
-    <h1><?php esc_html_e('File d'attente OpenDoliConnect', 'opendoliconnect'); ?></h1>
+    <h1><?php esc_html_e("File d'attente OpenDoliConnect', 'opendoliconnect"); ?></h1>
     <table class="widefat fixed striped">
         <thead>
             <tr>
@@ -22,7 +22,7 @@
                     </tr>
                 <?php endforeach; ?>
             <?php else : ?>
-                <tr><td colspan="5"><?php esc_html_e('Aucun job en file d'attente', 'opendoliconnect'); ?></td></tr>
+                <tr><td colspan="5"><?php esc_html_e("Aucun job en file d'attente', 'opendoliconnect"); ?></td></tr>
             <?php endif; ?>
         </tbody>
     </table>

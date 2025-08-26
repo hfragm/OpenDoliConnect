@@ -1,2 +1,20 @@
-/* OpenDoliConnect admin styles */
-.wrap h1 { color: #0073aa; }
+/* OpenDoliConnect - Admin styles */
+
+.wrap h1 {
+    color: #0073aa;
+}
+
+.odc-status-ok {
+    color: green;
+    font-weight: bold;
+}
+
+.odc-status-warning {
+    color: orange;
+    font-weight: bold;
+}
+
+.odc-status-error {
+    color: red;
+    font-weight: bold;
+}
